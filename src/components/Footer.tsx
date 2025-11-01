@@ -13,6 +13,7 @@ export default function Footer() {
 
     <Box
       component="footer"
+      id = "contact"
       sx={{
         py: 4,
         px: 2,

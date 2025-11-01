@@ -10,7 +10,7 @@ export default function Hero() {
     // Hero section with half-background image gradient and profile info
     <Box
       component="section"
-      id ="hero"
+      id ="home"
       sx={{
         position: "relative",
         overflow: "hidden",

@@ -9,7 +9,7 @@ import logoDark from "../assets/logoDark.png";
 
 // Define pages with names and href links
 const pages = [
-  { name: "Home", href: "#hero" },
+  { name: "Home", href: "#home" },
   { name: "Projects", href: "#projects" },
   { name: "Certifications", href: "#certifications" },
   { name: "Recommendations", href: "#recommendations" },
