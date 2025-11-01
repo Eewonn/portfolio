@@ -1,29 +1,37 @@
 import { Box, Container, Typography, Card, CardContent, CardMedia, CardActionArea } from '@mui/material';
+import sierraVision from '../assets/sierraVision.png';
+import pdfSummarizer from '../assets/pdfSummarizer.png';
+import gymManagement from '../assets/gymManagement.jpg';
+import libraryManagement from '../assets/libraryManagement.png';
 
 const projects = [
   {
     id: 1,
     title: 'SierraVision',
     description: 'A comprehensive website designed for users to visualize and analyze the changes in the Sierra Madre mountain range, over time.',
-    image: '/project1.jpg',
+    image: sierraVision,
+    githubUrl: 'https://github.com/Eewonn/SierraVision', // Replace with your actual repo URL
   },
   {
     id: 2,
     title: 'AI-Assisted PDF Summarizer',
     description: 'An AI-powered tool that summarizes PDF documents, extracting key information and insights for users.',
-    image: '/project2.jpg',
+    image: pdfSummarizer,
+    githubUrl: 'https://github.com/Eewonn/PDF-Summarizer-Project', // Replace with your actual repo URL
   },
   {
     id: 3,
     title: 'Gym Management System',
     description: 'A web-based gym management system using PHP to help gym owners, and staff manage daily operations digitally and efficiently.',
-    image: '/project3.jpg',
+    image: gymManagement,
+    githubUrl: 'https://github.com/Eewonn/Gym-Management-System', // Replace with your actual repo URL
   },
   {
     id: 4,
     title: 'Library Management System',
     description: 'A modern, responsive library management system built with Java to help libraries manage their collections and users effectively.',
-    image: '/project4.jpg',
+    image: libraryManagement,
+    githubUrl: 'https://github.com/Eewonn/Library-Management-System-Improved', // Replace with your actual repo URL
   },
 ];
 
@@ -80,7 +88,13 @@ export default function Projects() {
                 },
               }}
             >
-              <CardActionArea sx={{ flexGrow: 1 }}>
+              <CardActionArea 
+                component="a"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ flexGrow: 1 }}
+              >
                 <CardMedia
                   component="img"
                   height="200"
