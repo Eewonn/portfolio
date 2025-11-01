@@ -27,7 +27,13 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky"
+      elevation={4}
+      sx={{
+        zIndex: (theme) => theme.zIndex.appBar,
+        bgcolor: 'primary.main', // use theme primary
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Desktop Logo - Left Side */}
