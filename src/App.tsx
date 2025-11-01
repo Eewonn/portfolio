@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
+import Recommendations from "./components/Recommendations";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -23,6 +24,7 @@ function App() {
       <Hero />
       <Projects />
       <Certifications />
+      <Recommendations />
     </ThemeProvider>
   );
 }
