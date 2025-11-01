@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Button } from "@mui/material";
 import profile from "../assets/profile.png";
 
 export default function Hero() {
@@ -27,10 +27,10 @@ export default function Hero() {
             src={profile}
             alt="Profile"
             sx={{
-              width: { xs: 120, md: 320 },
-              height: { xs: 120, md: 320 },
+              width: { xs: 200, md: 250 },
+              height: { xs: 200, md: 250 },
               borderRadius: "50%",
-              boxShadow: 3,
+              boxShadow: 10,
               objectFit: "cover",
               flex: "0 0 auto",
               mx: { xs: "auto", md: 0 },
@@ -40,16 +40,16 @@ export default function Hero() {
           {/* Text content */}
           <Box sx={{ flex: 1 }}>
             <Typography
-              variant="h2"
+              variant="h3"
               component="h1"
               gutterBottom
               sx={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontFamily: '"Courier New", Courier, monospace',
                 letterSpacing: "-0.02em",
               }}
             >
-              Mark Eron Diaz.
+              Hi, I'm Mark Eron
             </Typography>
 
             <Typography
@@ -60,6 +60,28 @@ export default function Hero() {
               An AI-driven innovator creating practical, efficient solutions to
               advance AI in the Philippines.
             </Typography>
+
+            {/* Buttons */}
+            <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+              <Button
+                variant="contained"
+                color="primary"
+                // href="#contact"
+                sx={{ fontFamily: '"Courier New", Courier, monospace' }}
+              >
+                Contact
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                // href="/resume.pdf"
+                // target="_blank"
+                rel="noopener"
+                sx={{ fontFamily: '"Courier New", Courier, monospace' }}
+              >
+                Resume
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Container>
