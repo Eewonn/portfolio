@@ -84,7 +84,7 @@ export default function Hero() {
                 fontWeight: 600,
                 fontFamily: '"Courier New", Courier, monospace',
                 mb: 0.5,
-                fontcolor: 'text.primary',
+                color: isLight ? 'text.primary' : 'white',
               }}
             >
               Mark Eron Diaz
@@ -96,6 +96,7 @@ export default function Hero() {
                 fontWeight: 500,
                 fontFamily: '"Courier New", Courier, monospace',
                 mb: 0,
+                color: isLight ? 'text.primary' : 'white',
               }}
             >
               Software Engineer | AI and Cybersecurity Enthusiast

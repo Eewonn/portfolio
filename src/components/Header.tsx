@@ -5,6 +5,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/logo.png";
+import logoDark from "../assets/logoDark.png";
 
 const pages = ["About", "Projects", "Certifications", "Recommendations", "Contact"];
 
@@ -44,7 +45,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
           >
             <Box
               component="img"
-              src={logo}
+              src={darkMode ? logoDark : logo}
               alt="Logo"
               sx={{
                 display: { xs: "none", md: "flex" },
@@ -58,7 +59,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
               sx={{
                 fontFamily: '"Courier New", Courier, monospace',
                 fontWeight: 700,
-                color: "black",
+                color: "text.primary",
                 textDecoration: "none",
               }}
             >
@@ -104,7 +105,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
           {/* Mobile Logo */}
           <Box
             component="img"
-            src={logo}
+            src={darkMode ? logoDark : logo}
             alt="Logo"
             sx={{
               display: { xs: "flex", md: "none" },
@@ -125,7 +126,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
                 sx={{
                   fontFamily: '"Courier New", Courier, monospace',
                   fontWeight: 700,
-                  color: "black",
+                  color: "text.primary",
                   textDecoration: "none",
                 }}
               >
