@@ -7,14 +7,14 @@ export const getTheme = (mode: PaletteMode) => createTheme({
       main: mode === 'light' ? '#ffffff' : '#121212',
     },
     secondary: {
-      main: mode === 'light' ? '#ffffff' : '#121212',
+      main: mode === 'light' ? '#ffffff' : '#1d1d1d',
     },
     background: {
       default: mode === 'light' ? '#ffffff' : '#121212',
     },
     text: {
-      primary: mode === 'light' ? '#0f172a' : '#E0E0E0',
-      secondary: mode === 'light' ? '#475569' : '#B0B0B0',
+      primary: mode === 'light' ? '#0f172a' : '#ffffff',
+      secondary: mode === 'light' ? '#475569' : '#b4b4b4ff',
     },
   },
   typography: {

@@ -1,8 +1,11 @@
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Typography, Button, useTheme } from "@mui/material";
 import profile from "../assets/profile.png";
 import heroBg from "../assets/heroBg.jpg";
 
 export default function Hero() {
+  const theme = useTheme();
+  const isLight = theme.palette.mode === 'light';
+
   return (
     <Box
       component="section"
@@ -10,6 +13,7 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         color: "text.primary",
+        bgcolor: "background.default",
         // Ensure the section has enough height for the half-background effect
         minHeight: { xs: "auto", md: "60vh" },
         py: { xs: 6, md: 12 },
@@ -28,6 +32,7 @@ export default function Hero() {
           backgroundSize: "cover",
           backgroundPosition: "top",
           zIndex: 0,
+          opacity: isLight ? 1 : 0.5,
         }}
       />
 
@@ -40,7 +45,7 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: { xs: "40vh", md: "50vh" },
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.3), white 60%)",
+          background: isLight ? "linear-gradient(to bottom, rgba(0,0,0,0.3), white 60%)" : "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(18, 18, 18, 1) 60%)",
           zIndex: 1,
         }}
       />
@@ -78,7 +83,8 @@ export default function Hero() {
               sx={{
                 fontWeight: 600,
                 fontFamily: '"Courier New", Courier, monospace',
-                mb: 0.5
+                mb: 0.5,
+                fontcolor: 'text.primary',
               }}
             >
               Mark Eron Diaz
@@ -115,7 +121,7 @@ export default function Hero() {
             >
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 // href="#contact"
                 sx={{ fontFamily: '"Courier New", Courier, monospace' }}
               >
@@ -123,7 +129,7 @@ export default function Hero() {
               </Button>
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 // href="/resume.pdf"
                 // target="_blank"
                 rel="noopener"

@@ -28,6 +28,9 @@ const projects = [
 ];
 
 export default function Projects() {
+
+
+
   return (
     <Box
       component="section"
