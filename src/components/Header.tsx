@@ -1,13 +1,8 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import { AppBar, Toolbar, IconButton, Menu, Button, Box, Container, Typography} from '@mui/material';
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/logo.png";
 
@@ -17,6 +12,7 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+  const [darkMode, setDarkMode] = React.useState(false);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -25,6 +21,10 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleThemeToggle = () => {
+    setDarkMode(!darkMode);
+  }
 
   return (
     <AppBar position="sticky"
@@ -115,7 +115,7 @@ function Header() {
           <Box sx={{ flexGrow: 1 }} />
 
           {/* Desktop Navigation - Right Side */}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -130,7 +130,28 @@ function Header() {
                 {page}
               </Button>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <IconButton
+              onClick={handleThemeToggle}
+              color="inherit"
+              aria-label="toggle theme"
+              sx={{ ml: 1 }}
+            >
+              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
           </Box>
+
+          {/* Mobile Theme Toggle */}
+          <IconButton
+            onClick={handleThemeToggle}
+            color="inherit"
+            aria-label="toggle theme"
+            sx={{ display: { xs: "flex", md: "none" } }}
+          >
+            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+      
         </Toolbar>
       </Container>
     </AppBar>
