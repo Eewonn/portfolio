@@ -8,11 +8,15 @@ import logo from "../assets/logo.png";
 
 const pages = ["About", "Projects", "Certifications", "Recommendations", "Contact"];
 
-function Header() {
+interface HeaderProps {
+  darkMode: boolean;
+  onToggleTheme: () => void;
+}
+
+function Header({ darkMode, onToggleTheme }: HeaderProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [darkMode, setDarkMode] = React.useState(false);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -21,10 +25,6 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  const handleThemeToggle = () => {
-    setDarkMode(!darkMode);
-  }
 
   return (
     <AppBar position="sticky"
@@ -133,7 +133,7 @@ function Header() {
             
             {/* Theme Toggle Button */}
             <IconButton
-              onClick={handleThemeToggle}
+              onClick={onToggleTheme}
               color="inherit"
               aria-label="toggle theme"
               sx={{ ml: 1 }}
@@ -144,7 +144,7 @@ function Header() {
 
           {/* Mobile Theme Toggle */}
           <IconButton
-            onClick={handleThemeToggle}
+            onClick={onToggleTheme}
             color="inherit"
             aria-label="toggle theme"
             sx={{ display: { xs: "flex", md: "none" } }}
