@@ -75,19 +75,28 @@ export default function Hero() {
           <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               variant="h3"
-              component="h1"
-              gutterBottom
               sx={{
                 fontWeight: 600,
                 fontFamily: '"Courier New", Courier, monospace',
-                letterSpacing: "-0.02em",
+                mb: 0.5
               }}
             >
-              Hi, I'm Mark Eron
+              Mark Eron Diaz
             </Typography>
 
             <Typography
-              variant="h5"
+              variant="h6"
+              sx={{
+                fontWeight: 500,
+                fontFamily: '"Courier New", Courier, monospace',
+                mb: 0,
+              }}
+            >
+              Software Engineer | AI and Cybersecurity Enthusiast
+            </Typography>
+
+            <Typography
+              variant="h6"
               color="text.secondary"
               sx={{ maxWidth: 720 }}
             >
