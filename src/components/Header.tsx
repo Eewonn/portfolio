@@ -7,7 +7,13 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logoDark.png";
 
-const pages = ["About", "Projects", "Certifications", "Recommendations", "Contact"];
+const pages = [
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Certifications", href: "#certifications" },
+  { name: "Recommendations", href: "#recommendations" },
+  { name: "Contact", href: "#contact" },
+];
 
 interface HeaderProps {
   darkMode: boolean;
@@ -95,8 +101,13 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem 
+                  key={page.name} 
+                  onClick={handleCloseNavMenu}
+                  component="a"
+                  href={page.href}
+                >
+                  <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -121,7 +132,9 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
           <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
+                component="a"
+                href={page.href}
                 onClick={handleCloseNavMenu}
                 sx={{
                   fontFamily: '"Courier New", Courier, monospace',
@@ -130,7 +143,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
                   textDecoration: "none",
                 }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
             
