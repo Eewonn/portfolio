@@ -5,6 +5,7 @@ import { getTheme } from "./theme/theme";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       <Header darkMode={darkMode} onToggleTheme={toggleTheme} />
       <Hero />
       <Projects />
+      <Certifications />
     </ThemeProvider>
   );
 }
