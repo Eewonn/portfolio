@@ -7,8 +7,9 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logoDark.png";
 
+// Define pages with names and href links
 const pages = [
-  { name: "About", href: "#about" },
+  { name: "Home", href: "#hero" },
   { name: "Projects", href: "#projects" },
   { name: "Certifications", href: "#certifications" },
   { name: "Recommendations", href: "#recommendations" },
@@ -21,19 +22,23 @@ interface HeaderProps {
 }
 
 function Header({ darkMode, onToggleTheme }: HeaderProps) {
+  // State for mobile menu
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
 
+  // Handlers for mobile menu
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-
+  
+  // Handler to close mobile menu
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
   return (
+    // Header with responsive navigation and theme toggle
     <AppBar 
     position="sticky"
     elevation={4}
@@ -45,6 +50,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+
           {/* Desktop Logo - Left Side */}
           <Box
             sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
@@ -59,17 +65,6 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
                 mr: 2,
               }}
             />
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                fontFamily: '"Courier New", Courier, monospace',
-                fontWeight: 700,
-                color: "text.primary",
-                textDecoration: "none",
-              }}
-            >
-            </Typography>
           </Box>
 
           {/* Mobile Menu */}
@@ -84,6 +79,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -100,6 +96,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
             >
+
               {pages.map((page) => (
                 <MenuItem 
                   key={page.name} 
@@ -110,6 +107,7 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
                   <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
                 </MenuItem>
               ))}
+            
             </Menu>
           </Box>
 
@@ -173,4 +171,5 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
     </AppBar>
   );
 }
+
 export default Header;

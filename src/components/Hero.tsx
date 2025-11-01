@@ -7,18 +7,20 @@ export default function Hero() {
   const isLight = theme.palette.mode === 'light';
 
   return (
+    // Hero section with half-background image gradient and profile info
     <Box
       component="section"
+      id ="hero"
       sx={{
         position: "relative",
         overflow: "hidden",
         color: "text.primary",
         bgcolor: "background.default",
-        // Ensure the section has enough height for the half-background effect
         minHeight: { xs: "auto", md: "60vh" },
         py: { xs: 6, md: 12 },
       }}
     >
+
       {/* Top half with image */}
       <Box
         aria-hidden
@@ -36,7 +38,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Gradient overlay to fade to white */}
+      {/* Gradient overlay to fade to page background */}
       <Box
         aria-hidden
         sx={{
@@ -51,7 +53,7 @@ export default function Hero() {
       />
 
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
-        {/* Image - left on md+; top on xs */}
+        {/* Image - left on desktop; top on mobile */}
         <Box
           sx={{
             display: "flex",
@@ -60,7 +62,8 @@ export default function Hero() {
             alignItems: "center",
           }}
         >
-          {/* Image - left on md+, stacked on xs */}
+
+          {/* Image - left on desktop, stacked on mobile */}
           <Box
             component="img"
             src={profile}
@@ -105,7 +108,7 @@ export default function Hero() {
             <Typography
               variant="h6"
               color="text.secondary"
-              sx={{ maxWidth: 720 }}
+              sx={{ maxWidth: 650 }}
             >
               An AI-driven innovator creating practical, efficient solutions to
               advance AI in the Philippines.
@@ -120,19 +123,22 @@ export default function Hero() {
                 justifyContent: { xs: "center", md: "flex-start" },
               }}
             >
+
               <Button
                 variant="contained"
                 color="secondary"
-                // href="#contact"
+                href="mailto:markeron5@gmail.com"
+                target="_blank"
                 sx={{ fontFamily: '"Courier New", Courier, monospace' }}
               >
                 Contact
               </Button>
+
               <Button
                 variant="contained"
                 color="secondary"
-                // href="/resume.pdf"
-                // target="_blank"
+                href="/resume/Diaz_Resume.pdf"
+                target="_blank"
                 rel="noopener"
                 sx={{ fontFamily: '"Courier New", Courier, monospace' }}
               >
