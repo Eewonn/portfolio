@@ -1,17 +1,51 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import profile from "../assets/profile.png";
+import heroBg from "../assets/heroBg.jpg";
 
 export default function Hero() {
   return (
     <Box
       component="section"
       sx={{
-        bgcolor: "background.default",
+        position: "relative",
+        overflow: "hidden",
         color: "text.primary",
+        // Ensure the section has enough height for the half-background effect
+        minHeight: { xs: "auto", md: "60vh" },
         py: { xs: 6, md: 12 },
       }}
     >
-      <Container maxWidth="lg">
+      {/* Top half with image */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: { xs: "40vh", md: "50vh" },
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          zIndex: 0,
+        }}
+      />
+
+      {/* Gradient overlay to fade to white */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: { xs: "40vh", md: "50vh" },
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.3), white 60%)",
+          zIndex: 1,
+        }}
+      />
+
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         {/* Image - left on md+; top on xs */}
         <Box
           sx={{
@@ -38,7 +72,7 @@ export default function Hero() {
           />
 
           {/* Text content */}
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               variant="h3"
               component="h1"
@@ -62,7 +96,14 @@ export default function Hero() {
             </Typography>
 
             {/* Buttons */}
-            <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                mt: 3,
+                justifyContent: { xs: "center", md: "flex-start" },
+              }}
+            >
               <Button
                 variant="contained"
                 color="primary"
