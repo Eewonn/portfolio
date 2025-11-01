@@ -7,7 +7,7 @@ export const getTheme = (mode: PaletteMode) => createTheme({
       main: mode === 'light' ? '#ffffff' : '#121212',
     },
     secondary: {
-      main: mode === 'light' ? '#ffffff' : '#E0E0E0',
+      main: mode === 'light' ? '#ffffff' : '#121212',
     },
     background: {
       default: mode === 'light' ? '#ffffff' : '#121212',

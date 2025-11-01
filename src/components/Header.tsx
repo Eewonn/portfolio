@@ -27,11 +27,13 @@ function Header({ darkMode, onToggleTheme }: HeaderProps) {
   };
 
   return (
-    <AppBar position="sticky"
-      elevation={4}
+    <AppBar 
+    position="sticky"
+    elevation={4}
       sx={{
         zIndex: (theme) => theme.zIndex.appBar,
-        bgcolor: 'primary.main', // use theme primary
+        bgcolor: 'background.default',
+        backgroundImage: 'none',
       }}
     >
       <Container maxWidth="xl">
