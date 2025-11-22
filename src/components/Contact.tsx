@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 const Contact = () => {
   // Replace "YOUR_FORM_ID" with your actual Formspree form ID
-  const [state, handleSubmit] = useForm("https://formspree.io/f/movbegwg");
+  const [state, handleSubmit] = useForm("movbegwg");
 
   if (state.succeeded) {
       return (
