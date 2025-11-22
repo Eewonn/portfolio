@@ -33,8 +33,8 @@ const Contact = () => {
                         fontFamily: '"Courier New", Courier, monospace',
                     }}
                 >   
-                    Thanks for reaching out! <br />
-                    I'll get back to you as soon as possible.
+                    <p>Thanks for reaching out! </p>
+                    <p>I'll get back to you as soon as possible.</p>
                 </Typography>
             </Box>
         ) : (
