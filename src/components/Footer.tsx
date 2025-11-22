@@ -1,7 +1,7 @@
-import { Box, Container, Typography, IconButton, Button, useTheme} from "@mui/material";
+import { Box, Container, Typography, IconButton, useTheme} from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
+// import EmailIcon from "@mui/icons-material/Email";
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logoDark.png";
 
@@ -69,7 +69,7 @@ export default function Footer() {
             >
               <GitHubIcon />
             </IconButton>
-            <Button
+            {/* <Button
               variant="contained"
               color="primary"
               startIcon={<EmailIcon />}
@@ -83,7 +83,7 @@ export default function Footer() {
               }}
             >
               Email Me
-            </Button>
+            </Button> */}
           </Box>
         </Box>
 

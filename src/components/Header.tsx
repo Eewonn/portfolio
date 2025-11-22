@@ -13,7 +13,6 @@ const pages = [
   { name: "Projects", href: "#projects" },
   { name: "Certifications", href: "#certifications" },
   { name: "Recommendations", href: "#recommendations" },
-  { name: "Contact", href: "#contact" },
 ];
 
 interface HeaderProps {

@@ -127,8 +127,7 @@ export default function Hero() {
               <Button
                 variant="contained"
                 color="secondary"
-                href="mailto:markeron5@gmail.com"
-                target="_blank"
+                href="#contact"
                 sx={{ fontFamily: '"Courier New", Courier, monospace' }}
               >
                 Contact
